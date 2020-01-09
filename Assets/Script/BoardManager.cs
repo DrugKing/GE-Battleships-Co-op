@@ -43,10 +43,10 @@ public class BoardManager : MonoBehaviour
     public List<int> values = new List<int>();
 
     private bool isdone;
-    public bool StartGame;
+    public static bool StartGame = false;
     bool reset;
-    public int SelectionX = -1;
-    public int SelectionZ = -1;
+    public static int SelectionX = -1;
+    public static int SelectionZ = -1;
     int k = 0;
     int j = 0;
 
@@ -272,11 +272,17 @@ public class BoardManager : MonoBehaviour
         {
             for (int i = 0; i < 5; i++)
             {
-                GameObject.Find(ships[i].name + "p2").GetComponentInChildren<Renderer>().enabled = false;
+                if (GameObject.Find(ships[i].name + "p2"))
+                {
+                    GameObject.Find(ships[i].name + "p2").GetComponentInChildren<Renderer>().enabled = false;
+                }
             }
             for (int i = 0; i < 5; i++)
             {
-                GameObject.Find(ships[i].name + "p1").GetComponentInChildren<Renderer>().enabled = true;
+                if (GameObject.Find(ships[i].name + "p1"))
+                {
+                    GameObject.Find(ships[i].name + "p1").GetComponentInChildren<Renderer>().enabled = true;
+                }
             }
             //ShipsP1.SetActive(true);
             //ShipsP2.SetActive(false);
@@ -285,11 +291,17 @@ public class BoardManager : MonoBehaviour
         {
             for (int i = 0; i < 5; i++)
             {
-                GameObject.Find(ships[i].name + "p1").GetComponentInChildren<Renderer>().enabled = false;
+                if (GameObject.Find(ships[i].name + "p1"))
+                {
+                    GameObject.Find(ships[i].name + "p1").GetComponentInChildren<Renderer>().enabled = false;
+                }
             }
             for (int i = 0; i < 5; i++)
             {
-                GameObject.Find(ships[i].name + "p2").GetComponentInChildren<Renderer>().enabled = true;
+                if (GameObject.Find(ships[i].name + "p2"))
+                {
+                    GameObject.Find(ships[i].name + "p2").GetComponentInChildren<Renderer>().enabled = true;
+                }
             }
             //ShipsP1.SetActive(false);
             //ShipsP2.SetActive(true);
@@ -393,8 +405,8 @@ public class BoardManager : MonoBehaviour
             else
             {
                 ClearSelection();
-                SelectionX = -1;
-                SelectionZ = -1;
+                //SelectionX = -1;
+                //SelectionZ = -1;
             }
         }
         else

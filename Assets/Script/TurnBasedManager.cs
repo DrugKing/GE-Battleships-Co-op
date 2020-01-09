@@ -26,6 +26,7 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
     [SerializeField]
     GameObject playerPrefab;
     public GameObject StartPanel;
+    public GameObject torpedo;
 
     public static TurnBasedManager instance;
     public static int turnNo = 1;
@@ -68,10 +69,9 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
     
     // Update is called once per frame
     void Update()
-    {
-        bool starts = gameObject.GetComponent<BoardManager>().StartGame;
+    {        
         UniqueRoom();
-        if (Input.GetKeyDown("space") && starts)
+        if (Input.GetKeyDown("space") && BoardManager.StartGame)
         {
             if (BoardManager.canshoot)
             {
@@ -194,6 +194,7 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
                     StartPanel.SetActive(true);
                 }
             }
+            GameObject Torpedo = Instantiate(torpedo);            
         }
         else
         {

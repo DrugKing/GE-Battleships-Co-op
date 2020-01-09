@@ -2054,6 +2054,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 669235413013776416, guid: 8d25ce48e7675f54eab56642b3de1157,
     type: 3}
   StartPanel: {fileID: 725748132}
+  torpedo: {fileID: 5721371007900112736, guid: 7d0877719f36b464b9c0a63e0fd83a88, type: 3}
 --- !u!114 &876763206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2094,9 +2095,6 @@ MonoBehaviour:
   Confirmation: {fileID: 1675720120}
   StartPanel: {fileID: 725748132}
   values: 
-  StartGame: 0
-  SelectionX: -1
-  SelectionZ: -1
 --- !u!114 &876763207
 MonoBehaviour:
   m_ObjectHideFlags: 0
