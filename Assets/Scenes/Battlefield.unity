@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -96,8 +96,9 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-  m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingDataAsset: {fileID: 112000000, guid: e40fed6a22b16a34cbd7a74bc7eeecb1,
+    type: 2}
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2051,10 +2052,11 @@ MonoBehaviour:
   PlayerCamera: {fileID: 0}
   playername: {fileID: 314050491}
   nextplayer: {fileID: 78855979}
-  playerPrefab: {fileID: 669235413013776416, guid: 8d25ce48e7675f54eab56642b3de1157,
+  playerPrefab: {fileID: 3434885773754509570, guid: ec22bafbdab70fb4897be9f3ccfb0186,
     type: 3}
   StartPanel: {fileID: 725748132}
-  torpedo: {fileID: 5721371007900112736, guid: 7d0877719f36b464b9c0a63e0fd83a88, type: 3}
+  torpedo: {fileID: 2606020355837023254, guid: 28bf36d22e68a4e4f82c6d18a559e4fe, type: 3}
+  coroutineScript: {fileID: 0}
 --- !u!114 &876763206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,7 +2081,7 @@ MonoBehaviour:
   Hiting: {fileID: 2100000, guid: f60d6ffe1eb829943b04b131f55e187d, type: 2}
   selectedObject: {fileID: 0}
   ships:
-  - {fileID: 4847591577368513123, guid: e1aa200d2dd5cb2449fbb893fdff21d8, type: 3}
+  - {fileID: 5754036971037126665, guid: 26a726b1d73a4c44bad39944dd951483, type: 3}
   - {fileID: 2698961563192829419, guid: c79680b8ad3fc484badb6db145dd4cde, type: 3}
   - {fileID: 3764732843700323574, guid: 7df2b43cfb2cf1c4e9feadcfeaeec887, type: 3}
   - {fileID: 168111818151998066, guid: 41de56779b96304499e4e0a3e65f08b4, type: 3}
@@ -2363,7 +2365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1088663537
 RectTransform:
   m_ObjectHideFlags: 0

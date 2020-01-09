@@ -27,6 +27,7 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
     GameObject playerPrefab;
     public GameObject StartPanel;
     public GameObject torpedo;
+    public launchingtorpedo coroutineScript;
 
     public static TurnBasedManager instance;
     public static int turnNo = 1;
@@ -58,10 +59,11 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
             if (playerPrefab != null)
             {
                 int spawnPoint = 5;
-                p1=Instantiate(playerPrefab, new Vector3(spawnPoint, 5, -spawnPoint), Quaternion.identity);
+                Quaternion rotate = Quaternion.Euler(0, 270, 0);
+                p1 =Instantiate(playerPrefab, new Vector3(spawnPoint, 0.75f, -spawnPoint+3), rotate);
                 p1.name = PlayerNameInput.player1;
-                Quaternion rotate = Quaternion.Euler(0, 180, 0);
-                p2=Instantiate(playerPrefab, new Vector3(spawnPoint, 5, spawnPoint+30), rotate);
+                rotate = Quaternion.Euler(0, 90, 0);
+                p2=Instantiate(playerPrefab, new Vector3(spawnPoint, 0.75f, spawnPoint+27), rotate);
                 p2.name = PlayerNameInput.player2;
             }
         }
@@ -167,13 +169,11 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
                     {
                         strike = true;
                         Score.scoreA += 1;
-                        StartPanel.SetActive(true);
                     }
                 }
                 else
                 {
                     miss = true;
-                    StartPanel.SetActive(true);
                 }
             }       
             else
@@ -185,16 +185,17 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
                     {
                         strike = true;
                         Score.scoreB += 1;
-                        StartPanel.SetActive(true);
                     }                    
                 }
                 else
                 {
-                    miss = true;
-                    StartPanel.SetActive(true);
+                    miss = true;                    
                 }
             }
-            GameObject Torpedo = Instantiate(torpedo);            
+            Vector3 newTarget = hit.point + new Vector3(0, 0.5f, 0);
+            GameObject Torpedo = Instantiate(torpedo);
+            coroutineScript.Target = newTarget;            
+            StartPanel.SetActive(true);     
         }
         else
         {
