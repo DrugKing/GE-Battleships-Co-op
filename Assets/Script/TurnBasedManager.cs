@@ -27,7 +27,6 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
     GameObject playerPrefab;
     public GameObject StartPanel;
     public GameObject torpedo;
-    public launchingtorpedo coroutineScript;
 
     public static TurnBasedManager instance;
     public static int turnNo = 1;
