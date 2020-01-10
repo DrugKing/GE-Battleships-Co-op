@@ -4,25 +4,82 @@ using UnityEngine;
 
 public class PlayerFollow : MonoBehaviour
 {
-    public Transform PlayerTransform;
+    [SerializeField]
+    Camera PlayerCameras;
+    [SerializeField]
+    GameObject Controller;
 
-    private Vector3 _cameraOffset;
+    float mainSpeed = 50.0f; 
+    float shiftAdd = 250.0f; 
+    float maxShift = 1000.0f; 
+    float camSens = 0.25f; 
+    private Vector3 lastMouse = new Vector3(255, 255, 255); 
+    private float totalRun = 1.0f;
 
-    [Range(0.01f, 1.0f)]
-
-    public float SmoothFactor = 0.5f;
-
-    
-    // Start is called before the first frame update
     void Start()
     {
-        _cameraOffset = transform.position - PlayerTransform.position;
+        if (TurnBasedManager.turnNo == 1)
+        {
+            Controller = GameObject.Find(PlayerNameInput.player1);
+            PlayerCameras = Controller.GetComponentInChildren<Camera>();
+        }
+        if (TurnBasedManager.turnNo == 2)
+        {
+            Controller = GameObject.Find(PlayerNameInput.player2);
+            PlayerCameras = Controller.GetComponentInChildren<Camera>();
+        }
+    }
+    void Update()
+    {
+        //Keyboard commands
+        float f = 0.0f;
+        Vector3 p = GetBaseInput();
+        totalRun = Mathf.Clamp(totalRun * 0.5f, 1f, 1000f);
+        p = p * mainSpeed;
+       
+
+        p = p * Time.deltaTime;
+        Vector3 newPosition = transform.position;
+        if (Input.GetKey(KeyCode.Space))
+        { 
+            transform.Translate(p);
+            newPosition.x = transform.position.x;
+            newPosition.z = transform.position.z;
+            transform.position = newPosition;
+        }
+        else
+        {
+            transform.Translate(p);
+        }
+
     }
 
-    // Late Update is called after update methods
-    void LateUpdate()
-    {
-        Vector3 newPos = PlayerTransform.position + _cameraOffset;
-        transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor);
+    private Vector3 GetBaseInput()
+    { 
+        Vector3 p_Velocity = new Vector3();
+        if (Input.GetKey(KeyCode.W))
+        {
+            p_Velocity += new Vector3(0, 0, 1);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            p_Velocity += new Vector3(0, 0, -1);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            p_Velocity += new Vector3(-1, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            p_Velocity += new Vector3(1, 0, 0);
+        }
+        return p_Velocity;
     }
 }
+
+
+    
+      
+
+    
+    

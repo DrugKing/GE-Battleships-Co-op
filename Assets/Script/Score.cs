@@ -35,7 +35,7 @@ public class Score : MonoBehaviour
         }
         checkforwin();
         //To check if you can win
-        if (Input.GetKeyDown("a"))
+        if (Input.GetKeyDown("p"))
         {
             scoreB = 17;
         }
