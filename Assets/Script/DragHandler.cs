@@ -8,7 +8,7 @@ using Photon.Pun;
 public class DragHandler : MonoBehaviourPunCallbacks
 {
     [SerializeField]
-    Camera PlayerCamera;
+    Camera PlayerCameras;
     [SerializeField]
     GameObject Controller;
     public static bool space;
@@ -44,12 +44,12 @@ public class DragHandler : MonoBehaviourPunCallbacks
         if(TurnBasedManager.turnNo == 1)
         {
             Controller = GameObject.Find(PlayerNameInput.player1);
-            PlayerCamera = Controller.GetComponentInChildren<Camera>();
+            PlayerCameras = Controller.GetComponentInChildren<Camera>();
         }
         if (TurnBasedManager.turnNo == 2)
         {
             Controller = GameObject.Find(PlayerNameInput.player2);
-            PlayerCamera = Controller.GetComponentInChildren<Camera>();
+            PlayerCameras = Controller.GetComponentInChildren<Camera>();
         }
     }
 
@@ -58,7 +58,7 @@ public class DragHandler : MonoBehaviourPunCallbacks
         if (notPlace)
         {            
             RaycastHit hit;
-            if (Physics.Raycast(PlayerCamera.ScreenPointToRay(Input.mousePosition), out hit, 50.0f, layerMask: ~((1 << 8) | (1 << 9))))
+            if (Physics.Raycast(PlayerCameras.ScreenPointToRay(Input.mousePosition), out hit, 50.0f, layerMask: ~((1 << 8) | (1 << 9))))
             {
                 GameObject hitObject = hit.transform.gameObject;
                 XPos = (float)hit.transform.position.x;

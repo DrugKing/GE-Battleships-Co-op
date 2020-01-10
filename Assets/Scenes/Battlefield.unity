@@ -2055,8 +2055,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 3434885773754509570, guid: ec22bafbdab70fb4897be9f3ccfb0186,
     type: 3}
   StartPanel: {fileID: 725748132}
-  torpedo: {fileID: 2606020355837023254, guid: 28bf36d22e68a4e4f82c6d18a559e4fe, type: 3}
-  coroutineScript: {fileID: 0}
+  splash: {fileID: 983227131757281956, guid: c745823c3e1c6f74985f182c7d0563fb, type: 3}
 --- !u!114 &876763206
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,12 +26,11 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
     [SerializeField]
     GameObject playerPrefab;
     public GameObject StartPanel;
-    public GameObject torpedo;
-
     public static TurnBasedManager instance;
     public static int turnNo = 1;
     public static bool strike = false;
     public static bool miss = false;
+    public ParticleSystem splash;
     GameObject p1;
     GameObject p2;
     int layerMask;    
@@ -167,7 +166,7 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
                     if (hitObject.gameObject.tag == "Player2" && hitObject.gameObject.layer == 9)
                     {
                         strike = true;
-                        Score.scoreA += 1;
+                        Score.scoreA += 1;                          
                     }
                 }
                 else
@@ -184,15 +183,15 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
                     {
                         strike = true;
                         Score.scoreB += 1;
-                    }                    
+                    }
                 }
                 else
                 {
                     miss = true;                    
                 }
             }
-            GameObject Torpedo = Instantiate(torpedo);
-            //gameObject.SendMessage("MyCoroutine", hit.transform, SendMessageOptions.RequireReceiver);          
+            Quaternion blast = Quaternion.Euler(-90, 0, 0); 
+            Instantiate(splash, new Vector3(BoardManager.SelectionX, 0.0f , BoardManager.SelectionZ), blast);
             StartPanel.SetActive(true);     
         }
         else

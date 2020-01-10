@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6660921544038139327}
   - component: {fileID: 3158641398783789609}
+  - component: {fileID: 7988474723318196602}
   m_Layer: 2
   m_Name: 3sizeship1
   m_TagString: Untagged
@@ -44,8 +45,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94903e3ddcd0cb94698191954a758839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
+  PlayerCameras: {fileID: 0}
   Controller: {fileID: 0}
+--- !u!65 &7988474723318196602
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769037632327607418}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2.9964666}
+  m_Center: {x: 0, y: 0, z: 0.9982333}
 --- !u!1 &6876448056210607628
 GameObject:
   m_ObjectHideFlags: 0

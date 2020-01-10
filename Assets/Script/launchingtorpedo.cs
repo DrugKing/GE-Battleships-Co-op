@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class launchingtorpedo : MonoBehaviour
 {
-    public GameObject[] PlayerLauncher;
+    /*public GameObject[] PlayerLauncher;
     public float speed = 20.0f;
     public GameObject Launchs;
     public GameObject playerPrefab;
@@ -26,7 +26,7 @@ public class launchingtorpedo : MonoBehaviour
             PlayerCamera = playerPrefab.GetComponentInChildren<Camera>();
         }
         RaycastHit hit;
-        if (Physics.Raycast(PlayerCamera.ScreenPointToRay(Input.mousePosition), out hit, 100.0f, layerMask: ~((1 << 10))))
+        if (Physics.Raycast(PlayerCamera.ScreenPointToRay(Input.mousePosition), out hit, 100.0f, layerMask: ((1 << 8) | (1 << 9))))
         {
             hitObject = hit.transform.gameObject;
             target = new Vector3(hitObject.transform.position.x, -5.0f, hitObject.transform.position.z);
@@ -61,6 +61,6 @@ public class launchingtorpedo : MonoBehaviour
         {
             Destroy(this);
         }
-    }
+    }*/
 }
         
