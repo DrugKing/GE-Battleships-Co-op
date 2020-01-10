@@ -200,4 +200,4 @@ MonoBehaviour:
   PlayerLauncher: []
   speed: 20
   Launcher: {fileID: 0}
-  smoothing: 7
+  playerPrefab: {fileID: 0}

@@ -193,7 +193,7 @@ public class BoardManager : MonoBehaviour
     public void GenerateShip(int ship)
     {
         GameObject Ship = Instantiate(ships[ship]);
-        ShipVector = new Vector3(0.5f, -0.25f, 0.5f);
+        ShipVector = new Vector3(0.5f, 0f, 0.5f);
         Ship.transform.position = ShipVector;
         Ship.transform.SetParent(shipsparent.transform);
         Ship.name = (ships[ship].name + pname);
@@ -274,14 +274,22 @@ public class BoardManager : MonoBehaviour
             {
                 if (GameObject.Find(ships[i].name + "p2"))
                 {
-                    GameObject.Find(ships[i].name + "p2").GetComponentInChildren<Renderer>().enabled = false;
+                    Renderer[] components = GameObject.Find(ships[i].name + "p2").GetComponentsInChildren<Renderer>();
+                    for (int j = 0; j < components.Length; j++)
+                    {
+                        components[j].enabled = false;
+                    }
                 }
             }
             for (int i = 0; i < 5; i++)
             {
                 if (GameObject.Find(ships[i].name + "p1"))
                 {
-                    GameObject.Find(ships[i].name + "p1").GetComponentInChildren<Renderer>().enabled = true;
+                    Renderer[] components = GameObject.Find(ships[i].name + "p1").GetComponentsInChildren<Renderer>();
+                    for (int j = 0; j < components.Length; j++)
+                    {
+                        components[j].enabled = true;
+                    }
                 }
             }
             //ShipsP1.SetActive(true);
@@ -293,14 +301,22 @@ public class BoardManager : MonoBehaviour
             {
                 if (GameObject.Find(ships[i].name + "p1"))
                 {
-                    GameObject.Find(ships[i].name + "p1").GetComponentInChildren<Renderer>().enabled = false;
+                    Renderer[] components = GameObject.Find(ships[i].name + "p1").GetComponentsInChildren<Renderer>();
+                    for (int j = 0; j < components.Length; j++)
+                    {
+                        components[j].enabled = false;
+                    }
                 }
             }
             for (int i = 0; i < 5; i++)
             {
                 if (GameObject.Find(ships[i].name + "p2"))
                 {
-                    GameObject.Find(ships[i].name + "p2").GetComponentInChildren<Renderer>().enabled = true;
+                    Renderer[] components = GameObject.Find(ships[i].name + "p2").GetComponentsInChildren<Renderer>();
+                    for (int j = 0; j < components.Length; j++)
+                    {
+                        components[j].enabled = true;
+                    }
                 }
             }
             //ShipsP1.SetActive(false);

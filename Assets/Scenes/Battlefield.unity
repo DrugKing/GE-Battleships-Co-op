@@ -2081,11 +2081,11 @@ MonoBehaviour:
   Hiting: {fileID: 2100000, guid: f60d6ffe1eb829943b04b131f55e187d, type: 2}
   selectedObject: {fileID: 0}
   ships:
-  - {fileID: 5754036971037126665, guid: 26a726b1d73a4c44bad39944dd951483, type: 3}
-  - {fileID: 2698961563192829419, guid: c79680b8ad3fc484badb6db145dd4cde, type: 3}
-  - {fileID: 3764732843700323574, guid: 7df2b43cfb2cf1c4e9feadcfeaeec887, type: 3}
-  - {fileID: 168111818151998066, guid: 41de56779b96304499e4e0a3e65f08b4, type: 3}
-  - {fileID: 3163494298276456099, guid: ee7701a24cd70024f85880ff0776a861, type: 3}
+  - {fileID: 7893591703583466939, guid: cfd92c9d12f994f41b68092748a6990d, type: 3}
+  - {fileID: 4600069661328727128, guid: fe41cb2947c13f34b8395b03ac3ebcb9, type: 3}
+  - {fileID: 3769037632327607418, guid: 71ea625ba6e1e18459770b7d0475168c, type: 3}
+  - {fileID: 2128238920436564708, guid: 5e07bd1cf02d103438818969ba30c1c4, type: 3}
+  - {fileID: 5294537612288808170, guid: 3f5e8be9425e676408a3bd000d9383f4, type: 3}
   GamePanel: {fileID: 115550450}
   ShipSelectionPanel: {fileID: 817616754}
   TheButton:

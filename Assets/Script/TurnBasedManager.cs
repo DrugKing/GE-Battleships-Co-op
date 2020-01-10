@@ -192,9 +192,8 @@ public class TurnBasedManager : MonoBehaviourPunCallbacks//, IOnEventCallback
                     miss = true;                    
                 }
             }
-            Vector3 newTarget = hit.point + new Vector3(0, 0.5f, 0);
             GameObject Torpedo = Instantiate(torpedo);
-            coroutineScript.Target = newTarget;            
+            //gameObject.SendMessage("MyCoroutine", hit.transform, SendMessageOptions.RequireReceiver);          
             StartPanel.SetActive(true);     
         }
         else
